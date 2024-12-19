@@ -23,7 +23,7 @@ function App() {
       try {
         const response = await axios.get("https://api.prod.jcloudify.com/whoami");
         setSequence((prev) => [...prev, `${i}. Forbidden`]);
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay of 1 second
+        await new Promise((resolve) => setTimeout(resolve, 1000)); 
       } catch (error) {
         if (error.response?.status === 403 && error.response?.data?.captcha) {
           setCaptchaRequired(true);
